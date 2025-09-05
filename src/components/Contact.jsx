@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaClock, FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaBuilding, FaFileAlt } from 'react-icons/fa';
 
 const Contact = () => {
   return (
@@ -16,8 +16,10 @@ const Contact = () => {
         <p className="max-w-3xl mx-auto text-brand-muted mb-12">
           Skontaktuj się z nami, aby omówić Twój projekt. Wspólnie stworzymy stronę internetową, która przeniesie Twoją firmę na nowy poziom.
         </p>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 text-left">
-          <div className="bg-brand-blue bg-opacity-40 p-8 rounded-lg">
+
+        <div className="max-w-3xl mx-auto text-left">
+          {/* Krok 1: Przeniesiony formularz kontaktowy na górę */}
+          <div className="mb-12 bg-brand-blue bg-opacity-40 p-8 rounded-lg">
             <h3 className="text-2xl font-bold mb-6">Wyślij wiadomość</h3>
             <form className="space-y-4">
               <input type="text" placeholder="Imię i nazwisko" className="w-full bg-brand-blue p-3 rounded-lg border border-brand-purple focus:outline-none focus:border-brand-orange" />
@@ -29,26 +31,16 @@ const Contact = () => {
               </button>
             </form>
           </div>
-          <div className="space-y-8">
-            <div className="bg-brand-blue bg-opacity-40 p-8 rounded-lg">
-                <h3 className="text-2xl font-bold mb-6">Dane kontaktowe</h3>
-                 <div className="space-y-4 text-brand-muted">
-                    <p className="flex items-center"><FaMapMarkerAlt className="text-brand-orange mr-3" /> ul. Kosmiczna 42, 00-001 Warszawa</p>
-                    <p className="flex items-center"><FaEnvelope className="text-brand-orange mr-3" /> kontakt@solutionsbyandromeda.pl</p>
-                    <p className="flex items-center"><FaPhone className="text-brand-orange mr-3" /> +48 123 456 789</p>
-                    <p className="flex items-center"><FaClock className="text-brand-orange mr-3" /> Poniedziałek - Piątek: 9:00 - 17:00</p>
-                 </div>
-                 <h4 className="font-bold mt-8 mb-4">Znajdź nas</h4>
-                 <div className="flex space-x-4 text-2xl">
-                    <a href="#" className="text-brand-light hover:text-brand-orange"><FaFacebook /></a>
-                    <a href="#" className="text-brand-light hover:text-brand-orange"><FaInstagram /></a>
-                    <a href="#" className="text-brand-light hover:text-brand-orange"><FaLinkedin /></a>
-                    <a href="#" className="text-brand-light hover:text-brand-orange"><FaTwitter /></a>
-                 </div>
+
+          {/* Krok 2: Dane kontaktowe przeniesione na dół */}
+          <div className="p-8 bg-brand-blue bg-opacity-40 rounded-lg">
+            <h3 className="text-2xl font-bold mb-6 text-center sm:text-left">Dane kontaktowe</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-brand-muted">
+              <p className="flex items-center"><FaBuilding className="text-brand-orange mr-3 w-4" /> Andromeda Solutions Dawid Zieliński</p>
+              <p className="flex items-center"><FaFileAlt className="text-brand-orange mr-3 w-4" /> NIP: 6351870391</p>
+              <p className="flex items-center"><FaEnvelope className="text-brand-orange mr-3 w-4" /> dawidzielinski.programmer@gmail.com</p>
+              <p className="flex items-center"><FaPhone className="text-brand-orange mr-3 w-4" /> +48 572 072 278</p>
             </div>
-             <div className="bg-brand-blue bg-opacity-40 p-8 rounded-lg h-40 flex items-center justify-center">
-                <p className="text-brand-muted">Mapa lokalizacji</p>
-             </div>
           </div>
         </div>
       </motion.div>

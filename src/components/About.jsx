@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaRocket, FaUserFriends } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import constellationGraphic from '../assets/poznaj-nas.png'; // 1. Zaimportuj grafikę
 
 const About = () => {
   return (
@@ -12,10 +13,13 @@ const About = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <div className="p-8 border border-brand-blue rounded-lg bg-brand-blue bg-opacity-20">
-          <div className="relative h-64 sm:h-80 w-full flex items-center justify-center">
-             <p className="text-center text-brand-muted">Grafika konstelacji</p>
-          </div>
+        <div className="p-4 sm:p-8 border border-brand-blue rounded-lg bg-brand-blue bg-opacity-20">
+          {/* 2. Zastąp placeholder obrazkiem */}
+          <img 
+            src={constellationGraphic} 
+            alt="Abstrakcyjna grafika konstelacji" 
+            className="w-full h-full object-contain rounded-lg"
+          />
         </div>
         <div>
           <h3 className="text-sm font-bold text-brand-orange uppercase tracking-widest mb-2">Poznaj nas</h3>
