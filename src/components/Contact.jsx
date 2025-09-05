@@ -1,17 +1,22 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaClock, FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Contact = () => {
   return (
     <section id="kontakt" className="py-20 relative z-10 bg-brand-dark">
-
-      <div className="container mx-auto px-6 text-center">
+      <motion.div
+        className="container mx-auto px-4 sm:px-6 text-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Rozpocznij kosmiczną podróż z nami</h2>
         <p className="max-w-3xl mx-auto text-brand-muted mb-12">
           Skontaktuj się z nami, aby omówić Twój projekt. Wspólnie stworzymy stronę internetową, która przeniesie Twoją firmę na nowy poziom.
         </p>
-        <div className="grid lg:grid-cols-2 gap-12 text-left">
-          {/* Contact Form */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 text-left">
           <div className="bg-brand-blue bg-opacity-40 p-8 rounded-lg">
             <h3 className="text-2xl font-bold mb-6">Wyślij wiadomość</h3>
             <form className="space-y-4">
@@ -24,7 +29,6 @@ const Contact = () => {
               </button>
             </form>
           </div>
-          {/* Contact Details */}
           <div className="space-y-8">
             <div className="bg-brand-blue bg-opacity-40 p-8 rounded-lg">
                 <h3 className="text-2xl font-bold mb-6">Dane kontaktowe</h3>
@@ -47,7 +51,7 @@ const Contact = () => {
              </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
