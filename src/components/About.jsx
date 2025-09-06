@@ -41,7 +41,7 @@ const About = () => {
             <div className="flex items-center space-x-3">
               <FaUserFriends className="text-brand-orange text-3xl" />
               <div>
-                <p className="font-bold text-xl">5 lat</p>
+                <p className="font-bold text-xl">7 lat</p>
                 <p className="text-brand-muted text-sm">doświadczenia</p>
               </div>
             </div>

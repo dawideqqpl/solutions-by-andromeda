@@ -3,7 +3,8 @@ import { FaDesktop, FaShoppingCart, FaCode, FaPaintBrush, FaGamepad, FaCube } fr
 import { motion } from 'framer-motion';
 
 const servicesData = [
-  { icon: <FaDesktop />, title: 'Strony internetowe', price: '1500 zł', features: ['Responsywny design', 'Optymalizacja SEO', 'Szybkie ładowanie'] },
+  // ZMIANA TUTAJ: Dodajemy 'oldPrice', aby zidentyfikować promocję
+  { icon: <FaDesktop />, title: 'Strony internetowe', oldPrice: '1500 zł', price: '1000 zł', features: ['Responsywny design', 'Optymalizacja SEO', 'Szybkie ładowanie'] },
   { icon: <FaShoppingCart />, title: 'Sklepy e-commerce', price: '3000 zł', features: ['WooCommerce / Shopify', 'Integracje płatności', 'Intuicyjny panel zarządzania'] },
   { icon: <FaCode />, title: 'Aplikacje webowe', price: '5000 zł', features: ['Nowoczesne technologie', 'Systemy zarządzania treścią', 'Dedykowane rozwiązania'] },
   { icon: <FaPaintBrush />, title: 'Projektowanie logo', price: '800 zł', features: ['Unikalne projekty', 'Formaty wektorowe', 'Księga znaku'] },
@@ -11,13 +12,12 @@ const servicesData = [
   { icon: <FaCube />, title: 'Gry Web3', price: '15000 zł', features: ['Smart kontrakty', 'Integracja NFT', 'Tokenomia'] },
 ];
 
-// Definicja wariantów animacji dla kontenera i kart
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2, // Opóźnienie 0.2s między każdą kartą
+      staggerChildren: 0.2,
     },
   },
 };
@@ -27,8 +27,8 @@ const cardVariants = {
   visible: { y: 0, opacity: 1 },
 };
 
-// Zaktualizowany komponent karty z animacjami
-const ServiceCard = ({ icon, title, price, features }) => (
+// ZMIANA TUTAJ: Komponent ServiceCard teraz obsługuje 'oldPrice'
+const ServiceCard = ({ icon, title, price, features, oldPrice }) => (
   <motion.div 
     className="bg-brand-blue bg-opacity-40 p-8 rounded-lg border border-brand-purple flex flex-col h-full transition-all duration-300"
     variants={cardVariants}
@@ -45,14 +45,22 @@ const ServiceCard = ({ icon, title, price, features }) => (
         <p key={index} className="text-brand-muted mb-1">+ {feature}</p>
       ))}
     </div>
-    <p className="mt-6 font-bold text-lg text-right">od {price}</p>
+    
+    {/* ZMIANA TUTAJ: Warunkowe wyświetlanie ceny */}
+    {oldPrice ? (
+      <div className="mt-6 font-bold text-lg text-right">
+        <span className="text-brand-muted line-through mr-2 text-base">{oldPrice}</span>
+        <span className="text-brand-orange text-2xl">od {price}</span>
+      </div>
+    ) : (
+      <p className="mt-6 font-bold text-lg text-right">od {price}</p>
+    )}
   </motion.div>
 );
 
 const Services = () => {
   return (
     <section id="usługi" className="py-20 overflow-hidden relative z-10 bg-brand-dark">
-
       <div className="container mx-auto px-6 text-center">
         <motion.h2 
           className="text-3xl md:text-4xl font-bold mb-4"
