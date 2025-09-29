@@ -1,8 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/google",
-      "destination": "https://www.google.com",
+      "source": "/strona-radoslaw",
+      "destination": "https://rados-aw-constructio-bujc.bolt.host/",
       "permanent": false
     }
   ]
