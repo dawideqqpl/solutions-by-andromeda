@@ -4,6 +4,11 @@
       "source": "/strona-radoslaw",
       "destination": "https://rados-aw-constructio-bujc.bolt.host/",
       "permanent": false
+    },
+     {
+      "source": "/strona-wes",
+      "destination": "https://wes-interior-finishi-3pjc.bolt.host/",
+      "permanent": false
     }
   ]
 }
