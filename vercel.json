@@ -9,6 +9,11 @@
       "source": "/strona-wes",
       "destination": "https://wes-interior-finishi-3pjc.bolt.host/",
       "permanent": false
+    },
+     {
+      "source": "/parkiety-avi",
+      "destination": "https://parkiety-avi-floorin-hzfw.bolt.host/",
+      "permanent": false
     }
   ]
 }
