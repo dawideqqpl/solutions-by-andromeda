@@ -15,6 +15,10 @@ import gameSuperFlare from "../assets/game-superflare.png";
 import gameBuddyDice from "../assets/game-buddy-dice.png";
 import gameTankOnline from "../assets/game-tank-online.png";
 import gameFatman from "../assets/game-fatman.png";
+import video1 from "../assets/videos/video-1.mp4";
+import video2 from "../assets/videos/video-2.mp4";
+import video3 from "../assets/videos/video-3.mp4";
+import video4 from "../assets/videos/video-4.mp4";
 
 // Prosty placeholder dla pozycji bez miniatury
 const Placeholder = ({ title }) => (
@@ -57,6 +61,33 @@ Specjalizuję się w grach web3, czyli w połączeniu ze światem kryptowalut.`,
   { name: "Język angielski", value: "B2", type: "language" },
 ],
 items: [
+  // === WIDEO 1 (YouTube) ===
+   {
+    id: "v1",
+    type: "video",
+    title: "Video z Gry WEB3 Oscar Jump",
+    sources: [{ src: video1, type: "video/mp4" }],
+  },
+  // === WIDEO 2 (natywne MP4) ===
+   {
+    id: "v2",
+    type: "video",
+    title: "Video z Gry WEB3 Crash Game",
+    sources: [{ src: video2, type: "video/mp4" }],
+  },
+  // === WIDEO 2 (natywne MP4) ===
+   {
+    id: "v3",
+    type: "video",
+    title: "Video z Gry WEB3 Green Candle",
+    sources: [{ src: video3, type: "video/mp4" }],
+  },
+    {
+    id: "v4",
+    type: "video",
+    title: "Video z Gry WEB3 Coin Pusher",
+    sources: [{ src: video4, type: "video/mp4" }],
+  },
   {
     id: "p7",
     image: projectYoutuber,
@@ -110,6 +141,7 @@ items: [
   },
 ],
 
+
     langLabel: "Język",
     pl: "PL",
     en: "EN",
@@ -144,6 +176,33 @@ skills: [
   { name: "English language", value: "B2", type: "language" },
 ],
     items: [
+         {
+    id: "v1",
+    type: "video",
+    title: "Video of WEB3 Game Oscar Jump",
+    sources: [{ src: video1, type: "video/mp4" }],
+  },
+  // === WIDEO 2 (natywne MP4) ===
+   {
+    id: "v2",
+    type: "video",
+    title: "Video of WEB3 Game Crash Game",
+    sources: [{ src: video2, type: "video/mp4" }],
+  },
+  // === WIDEO 2 (natywne MP4) ===
+   {
+    id: "v3",
+    type: "video",
+    title: "Video of WEB3 Game Green Candle",
+    sources: [{ src: video3, type: "video/mp4" }],
+  },
+    {
+    id: "v4",
+    type: "video",
+    title: "Video of WEB3 Game Coin Pusher",
+    sources: [{ src: video4, type: "video/mp4" }],
+  },
+   
   {
     id: "p7",
     image: projectYoutuber,
@@ -299,6 +358,20 @@ const Lightbox = ({ src, alt, onClose }) => {
 };
 
 /* ==================== STRONA ==================== */
+const VideoPlayer = ({ sources = [], poster, title }) => (
+  <video
+    className="w-full h-56 object-cover bg-black"
+    poster={poster}
+    controls
+    playsInline
+    preload="metadata"
+  >
+    {sources.map((s, i) => (
+      <source key={i} src={s.src} type={s.type} />
+    ))}
+    Twoja przeglądarka nie obsługuje tagu video.
+  </video>
+);
 
 const PortfolioPage = () => {
   const [lang, setLang] = useState("pl");
@@ -364,65 +437,73 @@ const PortfolioPage = () => {
 
         {/* Portfolio grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-  {(t.items ?? []).map((item) => (
-            <motion.div
-              key={item.id}
-              className="group bg-brand-dark border border-brand-purple rounded-lg overflow-hidden shadow-lg hover:shadow-xl hover:border-brand-orange transition-all duration-300"
-              whileHover={{ scale: 1.03 }}
-            >
-              {/* miniatura:
-                  - jeśli clickImageToLink => <a> do item.link
-                  - jeśli zwykły obrazek => button otwiera lightbox
-                  - jeśli brak obrazka => Placeholder */}
-              {item.image ? (
-                item.clickImageToLink && item.link ? (
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    title={item.linkLabel || t.open}
-                    className="block w-full"
-                  >
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </a>
-                ) : (
-                  <button
-                    className="block w-full"
-                    onClick={() => openLightbox(item.image, item.title)}
-                    title={t.viewFull}
-                  >
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </button>
-                )
-              ) : (
-                <Placeholder title={item.title} />
-              )}
+ {(t.items ?? []).map((item) => (
+  <motion.div
+    key={item.id}
+    className="group bg-brand-dark border border-brand-purple rounded-lg overflow-hidden shadow-lg hover:shadow-xl hover:border-brand-orange transition-all duration-300"
+    whileHover={{ scale: 1.03 }}
+  >
+    {/* === MEDIA (video lub obrazek) === */}
+    {item.type === "video" ? (
+      <VideoPlayer
+        sources={item.sources}
+        poster={item.poster}
+        title={item.title}
+      />
+    ) : item.image ? (
+      item.clickImageToLink && item.link ? (
+        <a
+          href={item.link}
+          target="_blank"
+          rel="noreferrer"
+          title={item.linkLabel || t.open}
+          className="block w-full"
+        >
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+        </a>
+      ) : (
+        <button
+          className="block w-full"
+          onClick={() => openLightbox(item.image, item.title)}
+          title={t.viewFull}
+        >
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+        </button>
+      )
+    ) : (
+      <div className="w-full h-56 flex items-center justify-center bg-gradient-to-b from-[#322a4f] to-[#2a2440]">
+        <span className="text-white/85 font-semibold px-4 text-center">
+          {item.title}
+        </span>
+      </div>
+    )}
 
-              <div className="p-6 text-left">
-                <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-                <p className="text-brand-muted text-sm mb-3">{item.description}</p>
+    {/* === TEKST POD MEDIAMI === */}
+    <div className="p-6 text-left">
+      <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+      <p className="text-brand-muted text-sm mb-3">{item.description}</p>
 
-                {item.link && (
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-block text-sm font-semibold px-3 py-1 rounded-full bg-brand-orange text-black hover:opacity-90"
-                  >
-                    {item.linkLabel || t.open}
-                  </a>
-                )}
-              </div>
-            </motion.div>
-          ))}
+      {item.link && (
+        <a
+          href={item.link}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-block text-sm font-semibold px-3 py-1 rounded-full bg-brand-orange text-black hover:opacity-90"
+        >
+          {item.linkLabel || t.open}
+        </a>
+      )}
+    </div>
+  </motion.div>
+))}
         </div>
 {/* Skills */}
 {/* Skills */}
