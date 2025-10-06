@@ -24,6 +24,11 @@
       "source": "/apartamenty-arena",
       "destination": "https://new-chat-petu.bolt.host/",
       "permanent": false
+    },
+    {
+      "source": "/gwarant-probud",
+      "destination": "https://new-chat-3tge.bolt.host/",
+      "permanent": false
     }
   ]
 }
