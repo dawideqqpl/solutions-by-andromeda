@@ -1,4 +1,5 @@
-import React, { useState } from 'react'; // Import useState
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -7,30 +8,42 @@ import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Cursor from './components/Cursor';
-import PrivacyPolicy from './components/PrivacyPolicy'; // Import nowego komponentu
+import PrivacyPolicy from './components/PrivacyPolicy';
+import PortfolioPage from './pages/PortfolioPage';
+
+function HomeLayout({ onPolicyClick }) {
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <About />
+      <Services />
+      <Portfolio onViewMore={() => {}} />
+      <Contact />
+      <Footer onPolicyClick={onPolicyClick} />
+    </>
+  );
+}
 
 function App() {
-  const [isPolicyVisible, setIsPolicyVisible] = useState(false); // Stan do zarządzania modalem
-
+  const [showPolicy, setShowPolicy] = useState(false);
+  
   return (
-    <div className="bg-brand-dark">
+    <>
       <Cursor />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Portfolio />
-        {/* Przekazujemy funkcję do otwierania modala */}
-        <Contact onPolicyClick={() => setIsPolicyVisible(true)} />
-      </main>
-      {/* Przekazujemy funkcję do otwierania modala */}
-      <Footer onPolicyClick={() => setIsPolicyVisible(true)} />
-
-      {/* Warunkowe renderowanie modala */}
-      {isPolicyVisible && <PrivacyPolicy onClose={() => setIsPolicyVisible(false)} />}
-    </div>
-  )
+      <Routes>
+        <Route 
+          path="/" 
+          element={<HomeLayout onPolicyClick={() => setShowPolicy(true)} />} 
+        />
+        <Route 
+          path="/portfolio" 
+          element={<PortfolioPage />} 
+        />
+      </Routes>
+      {showPolicy && <PrivacyPolicy onClose={() => setShowPolicy(false)} />}
+    </>
+  );
 }
 
 export default App;
