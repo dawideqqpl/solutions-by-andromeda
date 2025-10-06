@@ -30,5 +30,11 @@
       "destination": "https://new-chat-3tge.bolt.host/",
       "permanent": false
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!api|.*\\..*).*)",
+      "destination": "/"
+    }
   ]
 }
