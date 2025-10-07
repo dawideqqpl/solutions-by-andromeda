@@ -19,6 +19,7 @@ import video1 from "../assets/videos/video-1.mp4";
 import video2 from "../assets/videos/video-2.mp4";
 import video3 from "../assets/videos/video-3.mp4";
 import video4 from "../assets/videos/video-4.mp4";
+import video5 from "../assets/videos/video-5.mp4";
 
 // Prosty placeholder dla pozycji bez miniatury
 const Placeholder = ({ title }) => (
@@ -86,6 +87,12 @@ items: [
     id: "v4",
     type: "video",
     title: "Video z Gry WEB3 Coin Pusher",
+    sources: [{ src: video4, type: "video/mp4" }],
+  },
+     {
+    id: "v5",
+    type: "video",
+    title: "Video z Gry WEB3 Racing Game",
     sources: [{ src: video4, type: "video/mp4" }],
   },
   {
@@ -202,7 +209,12 @@ skills: [
     title: "Video of WEB3 Game Coin Pusher",
     sources: [{ src: video4, type: "video/mp4" }],
   },
-   
+    {
+    id: "v5",
+    type: "video",
+    title: "Video of WEB3 Racing Game",
+    sources: [{ src: video5, type: "video/mp4" }],
+  },
   {
     id: "p7",
     image: projectYoutuber,
