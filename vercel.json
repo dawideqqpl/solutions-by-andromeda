@@ -29,6 +29,11 @@
       "source": "/gwarant-probud",
       "destination": "https://new-chat-3tge.bolt.host/",
       "permanent": false
+    },
+      {
+      "source": "/czaple-resort",
+      "destination": "https://czaple-resort-modern-obb3.bolt.host/",
+      "permanent": false
     }
   ],
   "rewrites": [
