@@ -34,6 +34,11 @@
       "source": "/czaple-resort",
       "destination": "https://czaple-resort-modern-obb3.bolt.host/",
       "permanent": false
+    },
+      {
+      "source": "/robert-golach-remonty",
+      "destination": "https://robert-go-ach-us-ugi-93lq.bolt.host/",
+      "permanent": false
     }
   ],
   "rewrites": [
