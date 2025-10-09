@@ -56,6 +56,11 @@
       "source": "/remonty-u-kamila",
       "destination": "https://remonty-u-kamila-0r2a.bolt.host/",
       "permanent": false
+    },
+     {
+      "source": "/hydro-bet",
+      "destination": "https://hydro-bet-profesjona-t68v.bolt.host/",
+      "permanent": false
     }
   ],
   "rewrites": [
