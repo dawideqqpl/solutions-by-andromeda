@@ -39,6 +39,11 @@
       "source": "/robert-golach-remonty",
       "destination": "https://robert-go-ach-us-ugi-93lq.bolt.host/",
       "permanent": false
+    },
+    {
+      "source": "/domek-wyspa-sobieszewska",
+      "destination": "https://domek-na-wyspie-sobi-sw2m.bolt.host/",
+      "permanent": false
     }
   ],
   "rewrites": [
