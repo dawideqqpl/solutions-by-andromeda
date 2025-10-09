@@ -50,6 +50,12 @@
       "source": "/awix-parkiety",
       "destination": "https://awix-parkiety-zbae.bolt.host/",
       "permanent": false
+    },
+
+    {
+      "source": "/remonty-u-kamila",
+      "destination": "https://remonty-u-kamila-0r2a.bolt.host/",
+      "permanent": false
     }
   ],
   "rewrites": [
