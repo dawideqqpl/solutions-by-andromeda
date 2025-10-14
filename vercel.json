@@ -61,6 +61,11 @@
       "source": "/hydro-bet",
       "destination": "https://hydro-bet-profesjona-t68v.bolt.host/",
       "permanent": false
+    },
+     {
+      "source": "/chata-na-wczoraj",
+      "destination": "https://chata-na-wczoraj-jxaw.bolt.host",
+      "permanent": false
     }
   ],
   "rewrites": [
