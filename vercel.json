@@ -71,6 +71,11 @@
       "source": "/kris-remontuje",
       "destination": "https://kris-remontuje-glxl.bolt.host/",
       "permanent": false
+    },
+      {
+      "source": "/louis-apartments",
+      "destination": "https://louis-apartments-qo3c.bolt.host/",
+      "permanent": false
     }
   ],
   "rewrites": [
