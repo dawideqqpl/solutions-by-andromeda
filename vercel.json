@@ -76,6 +76,16 @@
       "source": "/louis-apartments",
       "destination": "https://louis-apartments-qo3c.bolt.host/",
       "permanent": false
+    },
+      {
+      "source": "/mierzeja-wislana-jantar",
+      "destination": "https://mierzeja-wi-lana-jan-gnry.bolt.host/",
+      "permanent": false
+    },
+       {
+      "source": "/remonty-u-bogdana",
+      "destination": "https://remonty-u-bogdana-u6lo.bolt.host/",
+      "permanent": false
     }
   ],
   "rewrites": [
