@@ -86,6 +86,11 @@
       "source": "/remonty-u-bogdana",
       "destination": "https://remonty-u-bogdana-u6lo.bolt.host/",
       "permanent": false
+    },
+     {
+      "source": "/remonty-u-janusza",
+      "destination": "https://remonty-u-janusza-pr-udc9.bolt.host/",
+      "permanent": false
     }
   ],
   "rewrites": [
