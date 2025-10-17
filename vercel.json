@@ -59,7 +59,7 @@
     },
      {
       "source": "/hydro-bet",
-      "destination": "https://hydro-bet-profesjona-t68v.bolt.host/",
+      "destination": "https://hydro-bet-website-tp9w.bolt.host/",
       "permanent": false
     },
      {
@@ -92,6 +92,7 @@
       "destination": "https://remonty-u-janusza-pr-udc9.bolt.host/",
       "permanent": false
     }
+   
   ],
   "rewrites": [
     {
