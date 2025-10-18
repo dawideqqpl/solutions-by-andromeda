@@ -91,6 +91,11 @@
       "source": "/remonty-u-janusza",
       "destination": "https://remonty-u-janusza-pr-udc9.bolt.host/",
       "permanent": false
+    },
+     {
+      "source": "/inocleg",
+      "destination": "https://inocleg-apartamenty-6egz.bolt.host/",
+      "permanent": false
     }
    
   ],
