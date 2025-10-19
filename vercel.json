@@ -96,6 +96,11 @@
       "source": "/inocleg",
       "destination": "https://inocleg-apartamenty-6egz.bolt.host/",
       "permanent": false
+    },
+     {
+      "source": "/domek-letniskowy-asia",
+      "destination": "https://domek-letniskowy-asi-a9lq.bolt.host/",
+      "permanent": false
     }
    
   ],
