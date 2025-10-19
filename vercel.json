@@ -101,6 +101,11 @@
       "source": "/domek-letniskowy-asia",
       "destination": "https://domek-letniskowy-asi-a9lq.bolt.host/",
       "permanent": false
+    },
+     {
+      "source": "/podlogi-u-pawla",
+      "destination": "https://pod-ogi-u-paw-a-dalb.bolt.host/",
+      "permanent": false
     }
    
   ],
