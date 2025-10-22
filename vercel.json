@@ -126,6 +126,11 @@
       "source": "/agroturystyka-marcin",
       "destination": "https://agroturystyka-marcin-jf94.bolt.host",
       "permanent": false
+    },
+      {
+      "source": "/grudza-barn-house",
+      "destination": "https://grudza-barn-house-u4uu.bolt.host/",
+      "permanent": false
     }
    
   ],
