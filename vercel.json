@@ -116,6 +116,11 @@
       "source": "/domek-nad-czarna-hancza",
       "destination": "https://domek-nad-czarn-ha-c-2pd3.bolt.host/",
       "permanent": false
+    },
+    {
+      "source": "/osiedlowa-7",
+      "destination": "https://osiedlowa-7-0kfu.bolt.host/",
+      "permanent": false
     }
    
   ],
