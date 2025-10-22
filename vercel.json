@@ -121,6 +121,11 @@
       "source": "/osiedlowa-7",
       "destination": "https://osiedlowa-7-0kfu.bolt.host/",
       "permanent": false
+    },
+     {
+      "source": "/agroturystyka-marcin",
+      "destination": "https://agroturystyka-marcin-jf94.bolt.host",
+      "permanent": false
     }
    
   ],
