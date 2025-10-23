@@ -35,12 +35,7 @@ const Footer = ({ onPolicyClick }) => {
           {/* Kolumna 4 (zaktualizowana) */}
            <div>
             <h4 className="font-bold mb-4">Kontakt</h4>
-            <ul className="space-y-2 text-sm text-brand-muted">
-              <li>Andromeda Solutions Dawid Zieliński</li>
-              <li>NIP: 6351870391</li>
-              <li><a href="mailto:dawidzielinski.programmer@gmail.com" className="hover:text-brand-orange">dawidzielinski.programmer@gmail.com</a></li>
-              <li><a href="tel:+48572072278" className="hover:text-brand-orange">+48 572 072 278</a></li>
-            </ul>
+           
           </div>
         </div>
         <div className="border-t border-brand-purple pt-6 text-sm text-brand-muted flex flex-col sm:flex-row justify-between items-center gap-4">
