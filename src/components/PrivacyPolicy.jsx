@@ -36,7 +36,7 @@ const PrivacyPolicy = ({ onClose }) => {
 
             <h3>1. Kto jest administratorem Twoich danych?</h3>
             <p>
-              Administratorem Twoich danych osobowych jest Andromeda Solutions Dawid Zieliński z siedzibą w Gliwicach, NIP: 6351870391 (dalej: "Administrator").
+              Administratorem Twoich danych osobowych jest Dawid Zieliński (dalej: "Administrator").
             </p>
             <p>
               Kontakt z Administratorem jest możliwy pod adresem e-mail: dawidzielinski.programmer@gmail.com.
