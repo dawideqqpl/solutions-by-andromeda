@@ -126,6 +126,11 @@
       "source": "/grudza-barn-house",
       "destination": "https://grudza-barn-house-u4uu.bolt.host/",
       "permanent": false
+    },
+      {
+      "source": "/villa-granit",
+      "destination": "https://willa-granit-qgh7.bolt.host/",
+      "permanent": false
     }
    
   ],
