@@ -131,7 +131,13 @@
       "source": "/villa-granit",
       "destination": "https://willa-granit-qgh7.bolt.host/",
       "permanent": false
+    },
+       {
+      "source": "/chatka-szklarska-poreba",
+      "destination": "https://chatka-szklarska-por-qpxn.bolt.host/",
+      "permanent": false
     }
+   
    
   ],
   "rewrites": [
