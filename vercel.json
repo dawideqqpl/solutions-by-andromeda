@@ -141,6 +141,11 @@
       "source": "/pod-morskim-niebem",
       "destination": "https://pod-morskim-niebem-s09z.bolt.host/",
       "permanent": false
+    },
+       {
+      "source": "/dom-nad-jeziorem-ilinsk",
+      "destination": "https://dom-nad-jeziorem-ili-jcae.bolt.host/",
+      "permanent": false
     }
    
    
