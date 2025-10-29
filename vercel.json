@@ -136,6 +136,11 @@
       "source": "/chatka-szklarska-poreba",
       "destination": "https://chatka-szklarska-por-qpxn.bolt.host/",
       "permanent": false
+    },
+      {
+      "source": "/pod-morskim-niebem",
+      "destination": "https://pod-morskim-niebem-s09z.bolt.host/",
+      "permanent": false
     }
    
    
@@ -147,3 +152,4 @@
     }
   ]
 }
+  
