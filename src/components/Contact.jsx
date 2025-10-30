@@ -43,6 +43,9 @@ const Contact = ({ onPolicyClick }) => { // Dodajemy 'onPolicyClick' jako prop
               <textarea id="message" name="message" placeholder="Wiadomość" rows="5" className="w-full bg-brand-blue p-3 rounded-lg border border-brand-purple focus:outline-none focus:border-brand-orange" required></textarea>
               <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-500 text-sm"/>
               
+
+
+              
               <div className="flex items-start space-x-3 pt-2">
                 <input
                   id="rodo"
@@ -72,6 +75,36 @@ const Contact = ({ onPolicyClick }) => { // Dodajemy 'onPolicyClick' jako prop
           </div>
           
       
+
+
+
+
+{/* Kontakt */}
+<div className="max-w-3xl mx-auto text-center mt-12">
+ <h2 className="text-2xl font-semibold text-white mb-4">{t.contactTitle}</h2>
+<p className="text-brand-muted mb-4">{t.contactText}</p>
+  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+    <a
+      href="https://www.linkedin.com/in/dawid-zieli%C5%84ski-468513184/"
+      target="_blank"
+      rel="noreferrer"
+      className="px-4 py-2 rounded-full bg-[#0077b5] text-white font-semibold hover:bg-[#0a66c2] transition"
+    >
+      LinkedIn
+    </a>
+    <a
+      href="mailto:dawidzielinski.programmer@gmail.com"
+      className="px-4 py-2 rounded-full bg-brand-orange text-black font-semibold hover:opacity-90 transition"
+    >
+      dawidzielinski.programmer@gmail.com
+    </a>
+  </div>
+</div>
+
+
+
+
+
         </div>
       </motion.div>
     </section>
