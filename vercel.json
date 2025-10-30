@@ -156,6 +156,11 @@
       "source": "/dom-na-kaszubach",
       "destination": "https://dom-na-kaszubach-46rw.bolt.host/",
       "permanent": false
+    },
+      {
+      "source": "/sosnowy-dom",
+      "destination": "https://sosnowy-dom-4u0e.bolt.host",
+      "permanent": false
     }
    
    
