@@ -146,6 +146,11 @@
       "source": "/dom-nad-jeziorem-ilinsk",
       "destination": "https://dom-nad-jeziorem-ili-jcae.bolt.host/",
       "permanent": false
+    },
+        {
+      "source": "/domek-z-atrakcjami-mazury",
+      "destination": "https://domek-z-atrakcjami-m-npqy.bolt.host/",
+      "permanent": false
     }
    
    
