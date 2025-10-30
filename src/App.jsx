@@ -10,8 +10,9 @@ import Footer from './components/Footer';
 import Cursor from './components/Cursor';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import PortfolioPage from './pages/PortfolioPage';
+import Terms from './components/Terms';
 
-function HomeLayout({ onPolicyClick }) {
+function HomeLayout({ onPolicyClick, onTermsClick }) {
   return (
     <>
       <Navbar />
@@ -19,14 +20,15 @@ function HomeLayout({ onPolicyClick }) {
       <About />
       <Services />
       <Portfolio onViewMore={() => {}} />
-      <Contact />
-      <Footer onPolicyClick={onPolicyClick} />
+      <Contact onPolicyClick={onPolicyClick} onTermsClick={onTermsClick} />
+      <Footer onPolicyClick={onPolicyClick} onTermsClick={onTermsClick} />
     </>
   );
 }
 
 function App() {
   const [showPolicy, setShowPolicy] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
   
   return (
     <>
@@ -34,7 +36,12 @@ function App() {
       <Routes>
         <Route 
           path="/" 
-          element={<HomeLayout onPolicyClick={() => setShowPolicy(true)} />} 
+          element={(
+            <HomeLayout
+              onPolicyClick={() => setShowPolicy(true)}
+              onTermsClick={() => setShowTerms(true)}
+            />
+          )} 
         />
         <Route 
           path="/portfolio" 
@@ -42,6 +49,7 @@ function App() {
         />
       </Routes>
       {showPolicy && <PrivacyPolicy onClose={() => setShowPolicy(false)} />}
+      {showTerms && <Terms onClose={() => setShowTerms(false)} />}
     </>
   );
 }

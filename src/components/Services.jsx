@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 
 const servicesData = [
   // ZMIANA TUTAJ: Dodajemy 'oldPrice', aby zidentyfikować promocję
-  { icon: <FaDesktop />, title: 'Strony internetowe', oldPrice: '1500 zł', price: '1000 zł', features: ['Responsywny design', 'Optymalizacja SEO', 'Szybkie ładowanie'] },
+  { icon: <FaDesktop />, title: 'Strony internetowe', oldPrice: '1500 zł', price: '1200 zł', features: ['Responsywny design', 'Optymalizacja SEO', 'Szybkie ładowanie'] },
   { icon: <FaShoppingCart />, title: 'Sklepy e-commerce', price: '3000 zł', features: ['WooCommerce / Shopify', 'Integracje płatności', 'Intuicyjny panel zarządzania'] },
   { icon: <FaCode />, title: 'Aplikacje webowe', price: '5000 zł', features: ['Nowoczesne technologie', 'Systemy zarządzania treścią', 'Dedykowane rozwiązania'] },
   { icon: <FaPaintBrush />, title: 'Projektowanie logo', price: '800 zł', features: ['Unikalne projekty', 'Formaty wektorowe', 'Księga znaku'] },
-  { icon: <FaGamepad />, title: 'Tworzenie gier', price: '10000 zł', features: ['Unity / Unreal Engine', 'Rozgrywka multiplayer', 'Optymalizacja wydajności'] },
+  { icon: <FaGamepad />, title: 'Tworzenie gier', price: '10000 zł', features: ['Unity', 'Rozgrywka multiplayer', 'Optymalizacja wydajności'] },
   { icon: <FaCube />, title: 'Gry Web3', price: '15000 zł', features: ['Smart kontrakty', 'Integracja NFT', 'Tokenomia'] },
 ];
 
