@@ -151,6 +151,11 @@
       "source": "/domek-z-atrakcjami-mazury",
       "destination": "https://domek-z-atrakcjami-m-npqy.bolt.host/",
       "permanent": false
+    },
+       {
+      "source": "/dom-na-kaszubach",
+      "destination": "https://dom-na-kaszubach-46rw.bolt.host/",
+      "permanent": false
     }
    
    
