@@ -161,6 +161,11 @@
       "source": "/sosnowy-dom",
       "destination": "https://sosnowy-dom-4u0e.bolt.host",
       "permanent": false
+    },
+      {
+      "source": "/bistro-leon",
+      "destination": "https://bistro-leon-u60y.bolt.host",
+      "permanent": false
     }
    
    
