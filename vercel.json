@@ -166,6 +166,11 @@
       "source": "/bistro-leon",
       "destination": "https://bistro-leon-u60y.bolt.host",
       "permanent": false
+    },
+      {
+      "source": "/gory-sowie",
+      "destination": "https://domek-z-balia-gory-s-gefj.bolt.host",
+      "permanent": false
     }
    
    
