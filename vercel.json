@@ -171,6 +171,11 @@
       "source": "/gory-sowie",
       "destination": "https://domek-z-balia-gory-s-gefj.bolt.host",
       "permanent": false
+    },
+    {
+      "source": "/letnia-rezydencja",
+      "destination": "https://letnia-rezydencja-u6yj.bolt.host",
+      "permanent": false
     }
    
    
