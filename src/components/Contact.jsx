@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useForm, ValidationError } from '@formspree/react';
 import { FaEnvelope, FaPhone, FaBuilding, FaLinkedin } from 'react-icons/fa';
+import { useI18n } from '../i18n/I18nContext.jsx';
 
 const Contact = ({ onPolicyClick, onTermsClick }) => {
   const [state, handleSubmit] = useForm('xkgvpdby');
   const [isRodoChecked, setIsRodoChecked] = useState(false);
+  const { t } = useI18n();
 
   if (state.succeeded) {
     return (
@@ -15,8 +17,8 @@ const Contact = ({ onPolicyClick, onTermsClick }) => {
         style={{ minHeight: '80vh' }}
       >
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-orange mb-4">Dziękujemy za wiadomość!</h2>
-          <p className="text-brand-muted">Odezwiemy się najszybciej, jak to możliwe.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-orange mb-4">{t('contact.success.title')}</h2>
+          <p className="text-brand-muted">{t('contact.success.subtitle')}</p>
         </div>
       </section>
     );
@@ -31,22 +33,21 @@ const Contact = ({ onPolicyClick, onTermsClick }) => {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Rozpocznij kosmiczną podróż z nami</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('contact.title')}</h2>
         <p className="max-w-3xl mx-auto text-brand-muted mb-12">
-          Skontaktuj się z nami, aby omówić Twój projekt. Wspólnie stworzymy stronę internetową, która przeniesie Twoją
-          firmę na nowy poziom.
+          {t('contact.description')}
         </p>
 
         {/* FORMULARZ */}
         <div className="max-w-3xl mx-auto text-left">
           <div className="mb-12 bg-brand-blue bg-opacity-40 p-8 rounded-lg">
-            <h3 className="text-2xl font-bold mb-6">Wyślij wiadomość</h3>
+            <h3 className="text-2xl font-bold mb-6">{t('contact.form.title')}</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 id="name"
                 type="text"
                 name="name"
-                placeholder="Imię i nazwisko"
+                placeholder={t('contact.form.name')}
                 className="w-full bg-brand-blue p-3 rounded-lg border border-brand-purple focus:outline-none focus:border-brand-orange"
                 required
               />
@@ -54,7 +55,7 @@ const Contact = ({ onPolicyClick, onTermsClick }) => {
                 id="email"
                 type="email"
                 name="email"
-                placeholder="Adres e-mail"
+                placeholder={t('contact.form.email')}
                 className="w-full bg-brand-blue p-3 rounded-lg border border-brand-purple focus:outline-none focus:border-brand-orange"
                 required
               />
@@ -63,13 +64,13 @@ const Contact = ({ onPolicyClick, onTermsClick }) => {
                 id="phone"
                 type="tel"
                 name="phone"
-                placeholder="Telefon (opcjonalnie)"
+                placeholder={t('contact.form.phone')}
                 className="w-full bg-brand-blue p-3 rounded-lg border border-brand-purple focus:outline-none focus:border-brand-orange"
               />
               <textarea
                 id="message"
                 name="message"
-                placeholder="Opisz swój projekt lub zadaj pytanie"
+                placeholder={t('contact.form.message')}
                 rows="5"
                 className="w-full bg-brand-blue p-3 rounded-lg border border-brand-purple focus:outline-none focus:border-brand-orange"
                 required
@@ -86,14 +87,13 @@ const Contact = ({ onPolicyClick, onTermsClick }) => {
                   className="mt-1 h-4 w-4 rounded border-gray-300 text-brand-purple focus:ring-brand-purple"
                 />
                 <label htmlFor="rodo" className="text-sm text-brand-muted">
-                  Wyrażam zgodę na przetwarzanie moich danych osobowych w celu udzielenia odpowiedzi na wysłaną
-                  wiadomość. Zapoznałem(am) się z{' '}
+                  {t('contact.consent.prefix')}{' '}
                   <button type="button" onClick={onPolicyClick} className="text-brand-orange underline">
-                    Polityką Prywatności
+                    {t('contact.consent.privacy')}
                   </button>{' '}
-                  oraz{' '}
+                  {t('contact.consent.and')}{' '}
                   <button type="button" onClick={onTermsClick} className="text-brand-orange underline">
-                    Regulaminem
+                    {t('contact.consent.terms')}
                   </button>
                   .
                 </label>
@@ -104,7 +104,7 @@ const Contact = ({ onPolicyClick, onTermsClick }) => {
                 disabled={state.submitting || !isRodoChecked}
                 className="w-full bg-brand-orange text-brand-dark font-semibold px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 disabled:bg-gray-500 disabled:cursor-not-allowed"
               >
-                Wyślij wiadomość
+                {t('contact.form.submit')}
               </button>
             </form>
           </div>
@@ -119,10 +119,10 @@ const Contact = ({ onPolicyClick, onTermsClick }) => {
                 <FaBuilding />
               </div>
               <div className="min-w-0 flex-1 w-full text-right">
-                <h4 className="text-lg font-semibold text-white">Dane firmy</h4>
+                <h4 className="text-lg font-semibold text-white">{t('contact.tile.company.title')}</h4>
                 <p className="text-brand-muted">Solutions By Andromeda</p>
-                <p className="text-brand-muted">Właściciel: Dawid Zieliński</p>
-                <p className="text-brand-muted">NIP: 6351870391</p>
+                <p className="text-brand-muted">{t('contact.tile.company.owner')}: Dawid Zieliński</p>
+                <p className="text-brand-muted">{t('contact.tile.company.taxid')}: 6351870391</p>
               </div>
             </div>
 
@@ -132,14 +132,14 @@ const Contact = ({ onPolicyClick, onTermsClick }) => {
                 <FaEnvelope />
               </div>
               <div className="min-w-0 flex-1 w-full text-right">
-                <h4 className="text-lg font-semibold text-white">Napisz do nas</h4>
+                <h4 className="text-lg font-semibold text-white">{t('contact.tile.email.title')}</h4>
                 <a
                   href="mailto:dawidzielinski.programmer@gmail.com"
                   className="text-brand-orange font-medium hover:underline break-words"
                 >
                   dawidzielinski.programmer@gmail.com
                 </a>
-                <p className="text-brand-muted mt-1">Odpowiadamy w ciągu jednego dnia roboczego.</p>
+                <p className="text-brand-muted mt-1">{t('contact.tile.email.tagline')}</p>
               </div>
             </div>
 
@@ -149,7 +149,7 @@ const Contact = ({ onPolicyClick, onTermsClick }) => {
                 <FaPhone />
               </div>
               <div className="min-w-0 flex-1 w-full text-right">
-                <h4 className="text-lg font-semibold text-white">Kontakt telefoniczny</h4>
+                <h4 className="text-lg font-semibold text-white">{t('contact.tile.phone.title')}</h4>
                 <p className="text-brand-muted">
                   +48 572 072 278
                 </p>
@@ -162,16 +162,16 @@ const Contact = ({ onPolicyClick, onTermsClick }) => {
                 <FaLinkedin />
               </div>
               <div className="min-w-0 flex-1 w-full text-right">
-                <h4 className="text-lg font-semibold text-white">LinkedIn</h4>
+                <h4 className="text-lg font-semibold text-white">{t('contact.tile.linkedin.title')}</h4>
                 <a
                   href="https://www.linkedin.com/in/dawid-zieli%C5%84ski-468513184/"
                   target="_blank"
                   rel="noreferrer"
                   className="text-brand-orange font-medium hover:underline"
                 >
-                  Profil Dawida na LinkedIn
+                  {t('contact.tile.linkedin.profile')}
                 </a>
-                <p className="text-brand-muted mt-1">Chętnie porozmawiamy o Twoim projekcie.</p>
+                <p className="text-brand-muted mt-1">{t('contact.tile.linkedin.tagline')}</p>
               </div>
             </div>
           </div>

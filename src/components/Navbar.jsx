@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa'; // Ikony hamburgera i zamknięcia
 import logo from '../assets/logo.png';
+import { useI18n } from '../i18n/I18nContext.jsx';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // Stan do kontrolowania menu mobilnego
+  const { t } = useI18n();
 
   const navLinks = [
-    { label: "O NAS", href: "#onas" },
-    { label: "USŁUGI", href: "#usługi" },
-    { label: "PORTFOLIO", href: "#portfolio" },
-    { label: "KONTAKT", href: "#kontakt" },
+    { label: t('navbar.about'), href: "#onas" },
+    { label: t('navbar.services'), href: "#usługi" },
+    { label: t('navbar.portfolio'), href: "#portfolio" },
+    { label: t('navbar.contact'), href: "#kontakt" },
   ];
 
   const scrollToTop = () => {
@@ -40,7 +42,7 @@ const Navbar = () => {
           aria-label="Przewiń na górę strony"
         >
           <img src={logo} alt="Solutions By Andromeda Logo" className="h-8 w-8" />
-          <span className="text-xl font-bold text-white">Solutions By Andromeda</span>
+          <span className="text-xl font-bold text-white">{t('navbar.brand')}</span>
         </div>
 
         {/* Nawigacja na komputery (ukryta na mobilnych) */}

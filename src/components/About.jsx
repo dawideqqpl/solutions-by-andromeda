@@ -2,8 +2,10 @@ import React from 'react';
 import { FaRocket, FaUserFriends } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import constellationGraphic from '../assets/poznaj-nas.png'; // 1. Zaimportuj grafikę
+import { useI18n } from '../i18n/I18nContext.jsx';
 
 const About = () => {
+  const { t } = useI18n();
   return (
     <section id="onas" className="py-20 overflow-hidden relative z-10 bg-brand-dark">
       <motion.div 
@@ -22,27 +24,27 @@ const About = () => {
           />
         </div>
         <div>
-          <h3 className="text-sm font-bold text-brand-orange uppercase tracking-widest mb-2">Poznaj nas</h3>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Odkrywamy nowe wymiary projektowania</h2>
+          <h3 className="text-sm font-bold text-brand-orange uppercase tracking-widest mb-2">{t('about.tag')}</h3>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">{t('about.title')}</h2>
           <p className="text-brand-muted mb-4">
-            Solutions By Andromeda to pasja i doświadczenie, które od 2018 roku przekuwam w wyjątkowe rozwiązania cyfrowe. Jako niezależny specjalista łączę najnowsze technologie z artystyczną wizją, pomagając firmom zaistnieć w przestrzeni cyfrowej poprzez tworzenie stron internetowych, które nie tylko zachwycają wyglądem, ale również doskonale spełniają swoje funkcje.
+            {t('about.p1')}
           </p>
           <p className="text-brand-muted mb-8">
-            Moja misja jest prosta: projektować strony internetowe, które wyróżniają się w gąszczu przeciętności i przenoszą doświadczenia użytkowników na zupełnie nowy poziom – niczym podróż przez galaktykę Andromedy.
+            {t('about.p2')}
           </p>
           <div className="flex flex-col sm:flex-row gap-8">
             <div className="flex items-center space-x-3">
               <FaRocket className="text-brand-orange text-3xl" />
               <div>
                 <p className="font-bold text-xl">50+</p>
-                <p className="text-brand-muted text-sm">zrealizowanych projektów</p>
+                <p className="text-brand-muted text-sm">{t('about.metrics.projects')}</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <FaUserFriends className="text-brand-orange text-3xl" />
               <div>
-                <p className="font-bold text-xl">7 lat</p>
-                <p className="text-brand-muted text-sm">doświadczenia</p>
+                <p className="font-bold text-xl">7</p>
+                <p className="text-brand-muted text-sm">{t('about.metrics.years')}</p>
               </div>
             </div>
           </div>

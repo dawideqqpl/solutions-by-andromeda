@@ -1,16 +1,8 @@
 import React from 'react';
 import { FaDesktop, FaShoppingCart, FaCode, FaPaintBrush, FaGamepad, FaCube } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { useI18n } from '../i18n/I18nContext.jsx';
 
-const servicesData = [
-  // ZMIANA TUTAJ: Dodajemy 'oldPrice', aby zidentyfikować promocję
-  { icon: <FaDesktop />, title: 'Strony internetowe', oldPrice: '1500 zł', price: '1200 zł', features: ['Responsywny design', 'Optymalizacja SEO', 'Szybkie ładowanie'] },
-  { icon: <FaShoppingCart />, title: 'Sklepy e-commerce', price: '3000 zł', features: ['WooCommerce / Shopify', 'Integracje płatności', 'Intuicyjny panel zarządzania'] },
-  { icon: <FaCode />, title: 'Aplikacje webowe', price: '5000 zł', features: ['Nowoczesne technologie', 'Systemy zarządzania treścią', 'Dedykowane rozwiązania'] },
-  { icon: <FaPaintBrush />, title: 'Projektowanie logo', price: '800 zł', features: ['Unikalne projekty', 'Formaty wektorowe', 'Księga znaku'] },
-  { icon: <FaGamepad />, title: 'Tworzenie gier', price: '10000 zł', features: ['Unity', 'Rozgrywka multiplayer', 'Optymalizacja wydajności'] },
-  { icon: <FaCube />, title: 'Gry Web3', price: '15000 zł', features: ['Smart kontrakty', 'Integracja NFT', 'Tokenomia'] },
-];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -28,7 +20,7 @@ const cardVariants = {
 };
 
 // ZMIANA TUTAJ: Komponent ServiceCard teraz obsługuje 'oldPrice'
-const ServiceCard = ({ icon, title, price, features, oldPrice }) => (
+const ServiceCard = ({ icon, title, price, features, oldPrice, t }) => (
   <motion.div 
     className="bg-brand-blue bg-opacity-40 p-8 rounded-lg border border-brand-purple flex flex-col h-full transition-all duration-300"
     variants={cardVariants}
@@ -50,15 +42,26 @@ const ServiceCard = ({ icon, title, price, features, oldPrice }) => (
     {oldPrice ? (
       <div className="mt-6 font-bold text-lg text-right">
         <span className="text-brand-muted line-through mr-2 text-base">{oldPrice}</span>
-        <span className="text-brand-orange text-2xl">od {price}</span>
+        <span className="text-brand-orange text-2xl">{t('services.price.from')} {price}</span>
       </div>
     ) : (
-      <p className="mt-6 font-bold text-lg text-right">od {price}</p>
+      <p className="mt-6 font-bold text-lg text-right">{t('services.price.from')} {price}</p>
     )}
   </motion.div>
 );
 
 const Services = () => {
+  const { t } = useI18n();
+
+  const servicesData = [
+    { icon: <FaDesktop />, title: t('services.cards.websites.title'), oldPrice: '1500 zł', price: '1200 zł', features: [t('services.cards.websites.f1'), t('services.cards.websites.f2'), t('services.cards.websites.f3')] },
+    { icon: <FaShoppingCart />, title: t('services.cards.ecommerce.title'), price: '3000 zł', features: [t('services.cards.ecommerce.f1'), t('services.cards.ecommerce.f2'), t('services.cards.ecommerce.f3')] },
+    { icon: <FaCode />, title: t('services.cards.webapps.title'), price: '5000 zł', features: [t('services.cards.webapps.f1'), t('services.cards.webapps.f2'), t('services.cards.webapps.f3')] },
+    { icon: <FaPaintBrush />, title: t('services.cards.logo.title'), price: '800 zł', features: [t('services.cards.logo.f1'), t('services.cards.logo.f2'), t('services.cards.logo.f3')] },
+    { icon: <FaGamepad />, title: t('services.cards.games.title'), price: '10000 zł', features: [t('services.cards.games.f1'), t('services.cards.games.f2'), t('services.cards.games.f3')] },
+    { icon: <FaCube />, title: t('services.cards.web3.title'), price: '15000 zł', features: [t('services.cards.web3.f1'), t('services.cards.web3.f2'), t('services.cards.web3.f3')] },
+  ];
+
   return (
     <section id="usługi" className="py-20 overflow-hidden relative z-10 bg-brand-dark">
       <div className="container mx-auto px-6 text-center">
@@ -69,7 +72,7 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Kosmiczne rozwiązania internetowe
+          {t('services.title')}
         </motion.h2>
         <motion.p 
           className="max-w-3xl mx-auto text-brand-muted mb-12"
@@ -78,7 +81,7 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Oferujemy kompleksowe usługi, które pomogą Twojej firmie wyróżnić się w cyfrowym świecie. Nasze projekty łączą innowacyjny design z funkcjonalnością.
+          {t('services.description')}
         </motion.p>
         
         <motion.div 
@@ -88,9 +91,9 @@ const Services = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {servicesData.map((service, index) => (
-            <ServiceCard key={index} {...service} />
-          ))}
+            {servicesData.map((service, index) => (
+              <ServiceCard key={index} {...service} t={t} />
+            ))}
         </motion.div>
       </div>
     </section>

@@ -15,6 +15,7 @@ import strona1 from '../assets/strona-1.png';
 import strona2 from '../assets/strona-2.png';
 import strona3 from '../assets/strona-3.png';
 import strona4 from '../assets/strona-4.png';
+import { useI18n } from '../i18n/I18nContext.jsx';
 
 const categories = [
   {
@@ -119,6 +120,7 @@ const categories = [
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0].key);
   const [selectedItem, setSelectedItem] = useState(null);
+  const { t } = useI18n();
 
   const currentCategory = categories.find((category) => category.key === activeCategory) ?? categories[0];
 
@@ -136,10 +138,9 @@ const Portfolio = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Kosmiczna galeria naszych realizacji</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('portfolio.title')}</h2>
           <p className="max-w-3xl mx-auto text-brand-muted mb-12">
-            Odkryj nasze najnowsze projekty. Kazda realizacja to polaczenie designu, funkcjonalnosci i technologii
-            dopasowanych do potrzeb klienta.
+            {t('portfolio.description')}
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 mb-10">
@@ -156,7 +157,7 @@ const Portfolio = () => {
                       : 'border-brand-purple text-brand-muted hover:text-white hover:border-brand-orange'
                   }`}
                 >
-                  {category.label}
+                  {t(`portfolio.cat.${category.key}`)}
                 </button>
               );
             })}
@@ -180,8 +181,8 @@ const Portfolio = () => {
                   }`}
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-white text-xl font-bold">{item.title}</h3>
-                  <p className="text-gray-300 text-sm mt-2">{item.description}</p>
+                  <h3 className="text-white text-xl font-bold">{t(`portfolio.items.${item.id}.title`)}</h3>
+                  <p className="text-gray-300 text-sm mt-2">{t(`portfolio.items.${item.id}.desc`)}</p>
                 </div>
               </motion.div>
             ))}
