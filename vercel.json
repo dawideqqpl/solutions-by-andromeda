@@ -176,7 +176,13 @@
       "source": "/letnia-rezydencja",
       "destination": "https://letnia-rezydencja-u6yj.bolt.host",
       "permanent": false
+    },
+      {
+      "source": "/lazienki-u-artura",
+      "destination": "https://azienki-u-artura-e0j4.bolt.host",
+      "permanent": false
     }
+   
    
    
   ],
