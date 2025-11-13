@@ -181,6 +181,11 @@
       "source": "/lazienki-u-artura",
       "destination": "https://azienki-u-artura-e0j4.bolt.host",
       "permanent": false
+    },
+     {
+      "source": "/lux-dom-pod-lasem",
+      "destination": "https://lux-dom-pod-lasem-ruip.bolt.host",
+      "permanent": false
     }
    
    
