@@ -186,7 +186,13 @@
       "source": "/lux-dom-pod-lasem",
       "destination": "https://lux-dom-pod-lasem-ruip.bolt.host",
       "permanent": false
+    },
+      {
+      "source": "/gliczarowa-osada",
+      "destination": "https://gliczarowa-osada-exas.bolt.host/",
+      "permanent": false
     }
+   
    
    
    
