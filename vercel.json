@@ -196,6 +196,11 @@
       "source": "/delux-apartamenty",
       "destination": "https://delux-apartmenty-04jh.bolt.host",
       "permanent": false
+    },
+      {
+      "source": "/sosnowiec-apartament",
+      "destination": "https://sosnowiec-apartment-9g43.bolt.host",
+      "permanent": false
     }
    
    
