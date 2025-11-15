@@ -201,6 +201,11 @@
       "source": "/sosnowiec-apartament",
       "destination": "https://sosnowiec-apartment-9g43.bolt.host",
       "permanent": false
+    },
+      {
+      "source": "/golden-apartments-krakow",
+      "destination": "https://golden-apartments-kr-demr.bolt.host",
+      "permanent": false
     }
    
    
