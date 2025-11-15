@@ -206,6 +206,11 @@
       "source": "/golden-apartments-krakow",
       "destination": "https://golden-apartments-kr-demr.bolt.host",
       "permanent": false
+    },
+      {
+      "source": "/sen-mazur",
+      "destination": "https://sen-mazur-3ler.bolt.host",
+      "permanent": false
     }
    
    
